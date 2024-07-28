@@ -1,3 +1,7 @@
+const balanceCoinBlockContext = document.querySelector('#balanceCoinBlockContext');
+const balanceCoinSpanContext = document.createElement('span');
+balanceCoinBlockContext.appendChild(balanceCoinSpanContext);
+
 async function fetcher() {
   try {
     const response = await fetch('https://api.hamsterkombatgame.io/clicker/tap', {
@@ -28,10 +32,6 @@ async function fetcher() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const balanceCoinBlockContext = document.querySelector('#balanceCoinBlockContext');
-  const balanceCoinSpanContext = document.createElement('span');
-  balanceCoinBlockContext.appendChild(balanceCoinSpanContext);
-
   fetcher().then(data => {
     if (data) {
       console.log(data);
